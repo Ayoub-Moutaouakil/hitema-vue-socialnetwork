@@ -2,7 +2,7 @@
     <div id="card">
         <div id="card-info">
             <div id="card-info-user">
-                <h3 id="h3-title">Béatrice</h3>
+                <h3 id="h3-title">{{ data.pseudo }}</h3>
                 <img id="user-image" src="../assets/images/user.png" />
             </div>
             <div id="card-info-date">
@@ -13,7 +13,7 @@
             <img id="post-image" src="../assets/images/post-image.jpg" />
         </div>
         <div id="card-description">
-            <p id="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p id="description">{{ data.contenu }}</p>
         </div>
         <div id="card-counters">
 
@@ -30,6 +30,10 @@
 
 <script setup>
     import Comment from './Comment.vue'
+
+    const props = defineProps({
+        data: Object
+})
 </script>
 
 <style scoped>

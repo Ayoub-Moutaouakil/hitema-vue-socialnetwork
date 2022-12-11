@@ -4,7 +4,9 @@
             <Navigation></Navigation>
         </div>
         <div id="home-right">
-            <NetworkLine></NetworkLine>
+            <Suspense>
+                <NetworkLine></NetworkLine>
+            </Suspense>
         </div>
     </section>
 </template>
