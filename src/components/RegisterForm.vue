@@ -4,23 +4,50 @@
             <h2 id="h2-title">Créer un nouveau profil</h2>
             <img id="form-image" src="../assets/images/user.png" />
         </div>
-        <form id="form-main">
-            <input id="form-input" type="text" placeholder="pseudo" />
-            <input id="form-input" type="email" placeholder="votre@email.fr" />
-            <input id="form-input" type="password" placeholder="password" />
+        <form id="form-main" @submit.prevent="submit">
+            <input id="form-input" type="text" v-model="form.pseudo" placeholder="pseudo" />
+            <input id="form-input" type="email" v-model="form.email" placeholder="votre@email.fr" />
+            <input id="form-input" type="password" v-model="form.password" placeholder="password" />
             <input id="form-input" type="password" placeholder="confirmer password" />
-            <input id="form-input" type="text" placeholder="url de votre image" />
+            <input id="form-input" type="text" v-model="form.image" placeholder="url de votre image" />
             <input id="form-submit" type="submit" />
         </form>
     </div>
 </template>
 
-<script setup>
-
+<script>
+export default {
+    data() {
+        return {
+            form: {
+                pseudo: '',
+                email: '',
+                password: '',
+                image: ''
+            }
+        }
+    },
+    methods: {
+        submit() {
+            const requestOptions = {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ 
+                    email: this.form.email,
+                    password: this.form.password,
+                    pseudo: this.form.pseudo,
+                    urlImgProfil: this.form.image
+                })
+            };
+            fetch("http://localhost:3000/register", requestOptions)
+                .then(response => console.log(response.json()))
+                .then(() => {this.$router.replace({ name: 'Home' })})
+        }
+    }
+}
 </script>
 
 <style scoped>
-
 #form {
     width: 95%;
     height: auto;
@@ -82,5 +109,4 @@
     color: white;
     cursor: pointer;
 }
-
 </style>
