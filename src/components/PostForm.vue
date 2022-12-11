@@ -4,13 +4,47 @@
             <h2 id="h2-title">Créer un nouveau profil</h2>
             <img id="form-image" src="../assets/images/home.png" />
         </div>
-        <form id="form-main" >
-            <textarea id="form-textarea" rows="4" placeholder="Laissez un nouveau post" />
-            <input id="form-input" type="url" placeholder="URL de votre image" />
+        <form id="form-main" @submit.prevent="submit">
+            <textarea id="form-textarea" v-model="form.textarea" rows="4" placeholder="Laissez un nouveau post" ></textarea>
+            <input id="form-input" v-model="form.image" type="url" placeholder="URL de votre image" />
             <input id="form-submit" type="submit" />
         </form>
     </div>
 </template>
+
+<script>
+import {useUserStore} from "../stores/userStore"
+
+export default {
+    data() {
+        return {
+            form: {
+                textarea: '',
+                image: ''
+            },
+            userStore: useUserStore()
+        }
+    },
+    methods: {
+        submit() {
+            const requestOptions = {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ 
+                    contenu: this.form.textarea,
+                    urlImgArticle: this.form.image,
+                    like: 3,
+                    pseudo: this.userStore.user.pseudo,
+                    usrImg: this.userStore.user.image,
+                    date: 1649277945051,
+                    commentaires: []
+                })
+            };
+            fetch("http://localhost:3000/articles", requestOptions)
+        }
+    }
+}
+</script>
 
 <style scoped>
 

@@ -24,4 +24,5 @@ const userStore = useUserStore()
     overflow-y: scroll;
     overflow-x: hidden;
 }
+
 </style>

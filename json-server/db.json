@@ -4,56 +4,20 @@
       "email": "ayoub@test.com",
       "password": "$2a$10$qzLqISiNBdCLMhy8u.yte.0kn25M8fjyIWDN22kFn5FpwftGXjemu",
       "pseudo": "ayoub",
-      "urlImgProfil": "test",
+      "urlImgProfil": "https://cdn-icons-png.flaticon.com/512/3135/3135715.png",
       "id": 1
     }
   ],
   "articles": [
     {
-      "id": 1,
-      "contenu": "J'ai faim",
-      "urlImgArticle": "https://source.unsplash.com/random/1000x300",
-      "like": 2,
-      "pseudo": "Samina",
-      "": "",
+      "contenu": "Je suis incroyablement fort en dev web",
+      "urlImgArticle": "https://www.decade.fr/images/banni%C3%A8re-site-Dev-FrontEnd-VueJS.jpg",
+      "like": 3,
+      "pseudo": "ayoub",
+      "usrImg": "https://cdn-icons-png.flaticon.com/512/3135/3135715.png",
       "date": 1649277945051,
-      "commentaires": [
-        {
-          "id": 1,
-          "contenu": "lorem ipsum",
-          "pseudo": "Béatrice",
-          "dt": 1649277945051
-        },
-        {
-          "id": 2,
-          "contenu": "lorem ipsum",
-          "pseudo": "Béatrice",
-          "dt": 1649277945051
-        }
-      ]
-    },
-    {
-      "id": 2,
-      "contenu": "lorem ipsum",
-      "urlImgArticle": "https://source.unsplash.com/random/1000x300",
-      "like": 2,
-      "pseudo": "Alain",
-      "": "",
-      "date": 1649277945051,
-      "commentaires": [
-        {
-          "id": 1,
-          "contenu": "lorem ipsum",
-          "pseudo": "Béatrice",
-          "dt": 1649277945051
-        },
-        {
-          "id": 2,
-          "contenu": "lorem ipsum",
-          "pseudo": "Béatrice",
-          "dt": 1649277945051
-        }
-      ]
+      "commentaires": [],
+      "id": 1
     }
   ]
 }

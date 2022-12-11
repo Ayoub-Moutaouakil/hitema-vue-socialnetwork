@@ -3,7 +3,7 @@
         <div id="card-info">
             <div id="card-info-user">
                 <h3 id="h3-title">{{ data.pseudo }}</h3>
-                <img id="user-image" src="../assets/images/user.png" />
+                <img id="user-image" :src="data.usrImg" />
             </div>
             <div id="card-info-date">
                 <h4 id="h4-info">{{ data.date }}</h4>
@@ -14,9 +14,6 @@
         </div>
         <div id="card-description">
             <p id="description">{{ data.contenu }}</p>
-        </div>
-        <div id="card-counters">
-
         </div>
         <div id="card-comments">
             <div id="card-comments-title">
