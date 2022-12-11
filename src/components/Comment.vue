@@ -5,7 +5,7 @@
                 <h3 id="h3-title">{{data.pseudo}}</h3>
             </div>
             <div id="comment-info-date">
-                <h4 id="h4-info">{{data.dt}}</h4>
+                <h4 id="h4-info">{{ new Date(data.dt)}}</h4>
             </div>
         </div>
         <div id="comment-section">
@@ -27,7 +27,7 @@
     height: auto;
     display: flex;
     flex-direction: column;
-    border-bottom: 1px solid lightgray;
+    border-bottom: 1px solid #31475E;
 }
 
 #comment-info {

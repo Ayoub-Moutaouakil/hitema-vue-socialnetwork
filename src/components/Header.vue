@@ -1,8 +1,8 @@
 <template>
     <header id="header">
         <div id="header-left">
+            <img id="img-vue" src="../assets/images/vue.png" />
             <h1>MyNetWork</h1>
-            <img id="img-vue" src="../assets/images/logo.png" />
         </div>
         <div id="header-right">
             <h2>Social Network App for Hitema by Ayoub MOUTAOUAKIL</h2>
@@ -19,7 +19,7 @@
 #header {
     width: 100%;
     height: 10vh;
-    background-color: white;
+    background-color: #3FB984;
     display: flex;
     flex-direction: row;
 }
@@ -45,7 +45,7 @@
 #img-vue {
     width: 50px;
     height: 50px;
-    margin-left: 10px;
+    margin-right: 10px;
 }
 
 </style>

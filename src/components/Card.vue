@@ -6,7 +6,7 @@
                 <img id="user-image" :src="data.usrImg" />
             </div>
             <div id="card-info-date">
-                <h4 id="h4-info">{{ data.date }}</h4>
+                <h4 id="h4-info">{{ new Date(data.date) }}</h4>
             </div>
         </div>
         <div id="card-image">
@@ -21,24 +21,36 @@
             </div>
             <Comment v-for="comment in data.commentaires" :key="comment.id" :data="comment"></Comment>
         </div>
+        <div v-if="userStore.user.isLogged" id="card-comments-add">
+            <div id="card-comments-add-title">
+                <h3 id="h3-title">Ajouter un commentaire : </h3>
+            </div>
+            <form id="form-main">
+                <textarea id="form-textarea" rows="4" placeholder="Laissez un nouveau commentaire" ></textarea>
+                <input id="form-submit" type="submit" />
+            </form>
+        </div>
     </div>
 </template>
 
 <script setup>
     import Comment from './Comment.vue'
+    import {useUserStore} from "../stores/userStore"
 
     const props = defineProps({
         data: Object
-})
+    })
+
+    const userStore = useUserStore()
 </script>
 
 <style scoped>
 
 #card {
-    width: 100%;
+    width: 99%;
     height: auto;
     border-radius: 10px;
-    background-color: #F5F5F5;
+    background-color: #3FB984;
     border: 1px solid black;
     display: flex;
     flex-direction: column;
@@ -125,5 +137,51 @@
     border-bottom: 1px solid black;
 }
 
+#card-comments-add {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
 
+#card-comments-add-title {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid black;
+}
+
+#form-main {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+}
+
+#form-textarea {
+    width: 97%;
+    height: 140px;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    border: 1px solid grey;
+    padding-left: 10px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+#form-submit {
+    width: 20%;
+    height: 35px;
+    border-radius: 5px;
+    border: 1px solid black;
+    font-size: 15px;
+    font-weight: 600;
+    background-color: green;
+    color: white;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
 </style>

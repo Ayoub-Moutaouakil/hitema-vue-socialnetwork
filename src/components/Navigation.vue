@@ -2,15 +2,15 @@
     <div v-if="!userStore.user.isLogged" id="nav">
         <div id="nav-item" class="nav-separation">
             <img id="nav-image" src="../assets/images/home.png" />
-            <router-link to="/">Fil d'actualités</router-link>
+            <router-link to="/"><h3>Fil d'actualités</h3></router-link>
         </div>
         <div id="nav-item" class="nav-separation">
             <img id="nav-image" src="../assets/images/user.png" />
-            <router-link to="/register">Créer un profil</router-link>
+            <router-link to="/register"><h3>Créer un profil</h3></router-link>
         </div>
         <div id="nav-item">
             <img id="nav-image" src="../assets/images/login.png" />
-            <router-link to="/login">Se connecter</router-link>
+            <router-link to="/login"><h3>Se connecter</h3></router-link>
         </div>
     </div>
     <div v-else id="nav">
@@ -48,6 +48,7 @@ export default {
     border-radius: 10px;
     display: flex;
     flex-direction: column;
+    background-color: #3FB984;
 }
 
 #nav-item {
