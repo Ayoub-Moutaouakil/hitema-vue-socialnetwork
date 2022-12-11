@@ -2,8 +2,8 @@
     <div id="card">
         <div id="card-info">
             <div id="card-info-user">
-                <h3 id="h3-title">{{ data.pseudo }}</h3>
                 <img id="user-image" :src="data.usrImg" />
+                <h3 id="h3-title">{{ data.pseudo }}</h3>
             </div>
             <div id="card-info-date">
                 <h4 id="h4-info">{{ new Date(data.date) }}</h4>
