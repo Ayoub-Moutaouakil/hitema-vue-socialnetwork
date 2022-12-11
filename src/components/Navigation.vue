@@ -1,5 +1,5 @@
 <template>
-    <div id="nav">
+    <div v-if="!userStore.user.isLogged" id="nav">
         <div id="nav-item" class="nav-separation">
             <img id="nav-image" src="../assets/images/home.png" />
             <router-link to="/">Fil d'actualités</router-link>
@@ -13,7 +13,30 @@
             <router-link to="/login">Se connecter</router-link>
         </div>
     </div>
+    <div v-else id="nav">
+        <div id="nav-item" class="nav-separation">
+            <img id="nav-image" src="../assets/images/home.png" />
+            <router-link to="/"><h3>Fil d'actualités</h3></router-link>
+        </div>
+        <div id="nav-item" v-on:click="this.userStore.logout">
+            <img id="nav-image" src="../assets/images/logout.png" />
+            <h3>Déconnexion</h3>
+        </div>
+    </div>
 </template>
+
+<script>
+import {useUserStore} from "../stores/userStore"
+
+export default {
+    data() {
+        return {
+            userStore: useUserStore()
+        }
+    }
+}
+
+</script>
 
 <style scoped>
 

@@ -2,50 +2,21 @@
     <div id="form">
         <div id="form-title">
             <h2 id="h2-title">Créer un nouveau profil</h2>
-            <img id="form-image" src="../assets/images/login.png" />
+            <img id="form-image" src="../assets/images/home.png" />
         </div>
-        <form id="form-main" @submit.prevent="submit">
-            <input id="form-input" type="email" v-model="form.email" placeholder="votre@email.fr" />
-            <input id="form-input" type="password" v-model="form.password" placeholder="password" />
+        <form id="form-main" >
+            <textarea id="form-textarea" rows="4" placeholder="Laissez un nouveau post" />
+            <input id="form-input" type="url" placeholder="URL de votre image" />
             <input id="form-submit" type="submit" />
         </form>
     </div>
 </template>
 
-<script>
-import {useUserStore} from "../stores/userStore"
-
-export default {
-    data() {
-        return {
-            form: {
-                email: '',
-                password: ''
-            },
-            userStore: useUserStore()
-        }
-    },
-    methods: {
-        submit() {
-            const params = {
-                email: this.form.email,
-                password: this.form.password
-            }
-            this.userStore.login(params)
-            this.$router.replace({ name: 'Home' })
-            console.log(this.userStore.user)
-        }
-    }
-}
-
-</script>
-
 <style scoped>
 
 #form {
-    width: 95%;
+    width: 100%;
     height: fit-content;
-    margin-top: 30px;
     margin-bottom: 10px;
     border-radius: 10px;
     border: 1px solid black;
@@ -84,6 +55,17 @@ export default {
 #form-input {
     width: 97%;
     height: 35px;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    border: 1px solid grey;
+    padding-left: 10px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+#form-textarea {
+    width: 97%;
+    height: 140px;
     margin-bottom: 30px;
     border-radius: 5px;
     border: 1px solid grey;

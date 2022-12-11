@@ -16,6 +16,8 @@
 </template>
 
 <script>
+import {useUserStore} from "../stores/userStore"
+
 export default {
     data() {
         return {
@@ -24,24 +26,20 @@ export default {
                 email: '',
                 password: '',
                 image: ''
-            }
+            },
+            userStore: useUserStore()
         }
     },
     methods: {
         submit() {
-            const requestOptions = {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ 
-                    email: this.form.email,
-                    password: this.form.password,
-                    pseudo: this.form.pseudo,
-                    urlImgProfil: this.form.image
-                })
-            };
-            fetch("http://localhost:3000/register", requestOptions)
-                .then(response => console.log(response.json()))
-                .then(() => {this.$router.replace({ name: 'Home' })})
+            const params = { 
+                pseudo: this.form.pseudo,
+                email: this.form.email,
+                password: this.form.password,
+                image: this.form.image
+            }
+            this.userStore.register(params)
+            this.$router.replace({ name: 'Home' })
         }
     }
 }
@@ -50,7 +48,7 @@ export default {
 <style scoped>
 #form {
     width: 95%;
-    height: auto;
+    height: fit-content;
     margin-top: 30px;
     margin-bottom: 10px;
     border-radius: 10px;
@@ -108,5 +106,6 @@ export default {
     background-color: green;
     color: white;
     cursor: pointer;
+    margin-bottom: 20px;
 }
 </style>

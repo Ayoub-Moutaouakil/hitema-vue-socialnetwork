@@ -1,25 +1,11 @@
 {
   "users": [
     {
-      "email": "samina@yahoo.fr",
-      "password": "$2a$10$r5r42YGYjP9lXd8vxftSD.qhPNED1DQs6pOYOZm7ILVjd/To1cLsa",
-      "pseudo": "Samina",
+      "email": "ayoub@test.com",
+      "password": "$2a$10$qzLqISiNBdCLMhy8u.yte.0kn25M8fjyIWDN22kFn5FpwftGXjemu",
+      "pseudo": "ayoub",
       "urlImgProfil": "test",
       "id": 1
-    },
-    {
-      "email": "ayoub@vtff.com",
-      "password": "$2a$10$6RxSfx2ktbdPs4K7uvPuFO9K7kt/ESmniYDKcUjFBioTn/1S1XR0W",
-      "pseudo": "vtff",
-      "urlImgProfil": "test",
-      "id": 2
-    },
-    {
-      "email": "zebi@out.com",
-      "password": "$2a$10$fiXQgiSs7TilRTcuDk.k/uANMaH0GR7j4bRtP7TjZTVFHL.IP2.Di",
-      "pseudo": "zebi",
-      "urlImgProfil": "test",
-      "id": 3
     }
   ],
   "articles": [
