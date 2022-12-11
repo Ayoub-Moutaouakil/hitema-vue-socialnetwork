@@ -6,11 +6,11 @@
                 <img id="user-image" src="../assets/images/user.png" />
             </div>
             <div id="card-info-date">
-                <h4 id="h4-info">Posté le 10/12/2022 à 13h01</h4>
+                <h4 id="h4-info">{{ data.date }}</h4>
             </div>
         </div>
         <div id="card-image">
-            <img id="post-image" src="../assets/images/post-image.jpg" />
+            <img id="post-image" :src="data.urlImgArticle" />
         </div>
         <div id="card-description">
             <p id="description">{{ data.contenu }}</p>
@@ -22,8 +22,7 @@
             <div id="card-comments-title">
                 <h3 id="h3-title">Commentaires : </h3>
             </div>
-            <Comment></Comment>
-            <Comment></Comment>
+            <Comment v-for="comment in data.commentaires" :key="comment.id" :data="comment"></Comment>
         </div>
     </div>
 </template>

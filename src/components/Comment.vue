@@ -2,20 +2,22 @@
     <div id="comment">
         <div id="comment-info">
             <div id="comment-info-user">
-                <h3 id="h3-title">Béatrice</h3>
+                <h3 id="h3-title">{{data.pseudo}}</h3>
             </div>
             <div id="comment-info-date">
-                <h4 id="h4-info">Posté le 10/12/2022 à 13h01</h4>
+                <h4 id="h4-info">{{data.dt}}</h4>
             </div>
         </div>
         <div id="comment-section">
-            <p id="comment-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p id="comment-text">{{data.contenu}}</p>
         </div>
     </div>
 </template>
 
 <script setup>
-
+    const props = defineProps({
+        data: Object
+    })
 </script>
 
 <style scoped>
